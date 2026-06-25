@@ -14,7 +14,6 @@ permissions:
 env:
   CARGO_TERM_COLOR: always
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
   RELEASE_CARGO_FEATURES: channels-full
 
 jobs:
@@ -102,10 +101,6 @@ jobs:
       - name: Install cross (MUSL targets)
         if: matrix.use_cross
         run: cargo install cross --version 0.2.5 --locked
-
-      - name: Setup Android NDK
-        if: matrix.ndk
-        run: echo "$ANDROID_NDK/toolchains/llvm/prebuilt/linux-x86_64/bin" >> "$GITHUB_PATH"
 
       - name: Build release
         shell: bash
