@@ -14,7 +14,7 @@ permissions:
 env:
   CARGO_TERM_COLOR: always
   REGISTRY: ghcr.io
-  RELEASE_CARGO_FEATURES: channels-full
+  RELEASE_CARGO_FEATURES: channels-full,channel-matrix
 
 jobs:
   web:
